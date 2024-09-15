@@ -21,11 +21,11 @@
 
 В каждой тетради предоставить теоритическую справку, а затем дополнить методами.
 
-1. Preprocessing (2 тетради)
+* Preprocessing (2 тетради)
   - Data splitting ✅
   - Transformers 
-2. Metrics (2 тетради)
-3. Neural Nets (4 тетради)
+* Metrics (2 тетради)
+* Neural Nets (4 тетради)
   - Classification
   - Weighted classification
   - Regression
