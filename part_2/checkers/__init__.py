@@ -1,0 +1,1 @@
+# Allows for import of the checkers.
