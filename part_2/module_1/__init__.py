@@ -4,6 +4,7 @@ from typing import Any, Literal, List, Optional, Tuple, Union
 import numpy as np
 from numpy import ndarray
 
+
 Selections = Union[
     Tuple[ndarray, ndarray, ndarray, ndarray],
     Tuple[ndarray, ndarray, ndarray, ndarray, ndarray, ndarray],
