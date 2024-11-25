@@ -9,6 +9,112 @@ IndicesMap = Dict[Any, int]
 ConfusionMatrix = Tuple[ndarray, IndicesMap]
 
 
+def compute_mean_absolute_error(actual: ndarray, predicted: ndarray) -> float:
+    """Compute mean absolute error metric for regression model predictions.
+
+    :parameter actual: Actual target values.
+        :type actual: :class:`ndarray`
+    :parameter predicted: Predicted target values.
+        :type predicted: :class:`ndarray`
+
+    :return: Mean absolute error of the model.
+        :rtype: :class:`float`
+
+    :raises ValueError: If actual and predicted arrays have
+    non-broadcasting shapes.
+    """
+    error = float(np.mean(np.abs(actual - predicted)))
+    return error
+
+
+def compute_mean_squared_error(actual: ndarray, predicted: ndarray) -> float:
+    """Compute root mean squared error metric for regression model
+    predictions.
+
+    :parameter actual: Actual target values.
+        :type actual: :class:`ndarray`
+    :parameter predicted: Predicted target values.
+        :type predicted: :class:`ndarray`
+
+    :return: Mean squared error of the model.
+        :rtype: :class:`float`
+
+    :raises ValueError: If actual and predicted arrays have
+    non-broadcasting shapes.
+    """
+    error = float(np.mean(np.power(actual - predicted, 2)))
+    return error
+
+
+def compute_root_mean_squared_error(
+    actual: ndarray, predicted: ndarray
+) -> float:
+    """Compute root mean squared error metric for regression model
+    predictions.
+
+    :parameter actual: Actual target values.
+        :type actual: :class:`ndarray`
+    :parameter predicted: Predicted target values.
+        :type predicted: :class:`ndarray`
+
+    :returns: Root of mean squared error of the model.
+        :rtype: :class:`float`
+
+    :raises ValueError: If actual and predicted arrays have
+    non-broadcasting shapes.
+    """
+    error = np.sqrt(compute_mean_squared_error(actual, predicted))
+    return error
+
+
+def compute_r_squared_error(actual: ndarray, predicted: ndarray) -> float:
+    """Compute R-squared error metric for regression model
+    predictions.
+
+    :parameter actual: Actual target values.
+        :type actual: :class:`ndarray`
+    :parameter predicted: Predicted target values.
+        :type predicted: :class:`ndarray`
+
+    :returns: R-squared error of the model.
+        :rtype: :class:`float`
+
+    :raises ValueError: If actual and predicted arrays have
+    non-broadcasting shapes.
+    """
+    actual_mean = np.mean(actual)
+    error = 1 - (
+        np.sum((actual - predicted) ** 2) / np.sum((actual - actual_mean) ** 2)
+    )
+    return error
+
+
+def compute_adjusted_r_squared_error(
+    actual: ndarray, predicted: ndarray, n_predictors: int
+) -> float:
+    """Compute Adjusted R-squared error metric for regression model
+    predictions.
+
+    :parameter actual: Actual target values.
+        :type actual: :class:`ndarray`
+    :parameter predicted: Predicted target values.
+        :type predicted: :class:`ndarray`
+
+    :returns: Adjusted R-squared error of the model.
+        :rtype: :class:`float`
+
+    :raises ValueError: If actual and predicted arrays have
+    non-broadcasting shapes.
+    """
+    n_data_points = len(actual)
+    r_squared_error = compute_r_squared_error(actual, predicted)
+    error = 1 - (
+        ((1 - r_squared_error) * (n_data_points - 1))
+        / (n_predictors - n_data_points - 1)
+    )
+    return error
+
+
 def compute_accuracy(actual: ndarray, predicted: ndarray) -> float:
     """Compute accuracy for any model predictions.
 
