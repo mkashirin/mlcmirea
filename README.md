@@ -16,8 +16,8 @@
 
 * Preprocessing (2 тетради)
   - Data splitting ✅
-  - Transformers 
-* Metrics (2 тетради)
+  - Transformers ✅
+* Metrics (2 тетради) ✅
 * Neural Nets (4 тетради)
   - Classification
   - Weighted classification
