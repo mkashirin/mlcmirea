@@ -1,4 +1,8 @@
-.ipynb_checkpoints
-.virtual_documents
+.venv/
 
-__pycache__
+.ipynb_checkpoints/
+.virtual_documents/
+
+.imgs/
+
+__pycache__/
