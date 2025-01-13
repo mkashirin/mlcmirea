@@ -1,8 +1,8 @@
 .venv/
-
 .ipynb_checkpoints/
 .virtual_documents/
-
 .imgs/
 
 __pycache__/
+
+*.csv
