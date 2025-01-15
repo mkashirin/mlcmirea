@@ -20,6 +20,6 @@
 * Metrics (2 тетради) ✅
 * Neural Nets (4 тетради)
   - Elementary classification ✅
-  - KNN and weighing neighbors (WIP)
+  - KNN and weighing neighbors ✅
   - Regression
   - Layered regression
