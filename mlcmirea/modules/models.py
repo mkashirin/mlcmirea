@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from itertools import chain
-from logging import basicConfig, INFO
 from typing import Any, Dict, Optional
 
 import numpy as np
@@ -14,7 +13,6 @@ class ModelBase(ABC):
     def __init__(self) -> None:
         self.x_train: ndarray
         self.y_train: ndarray
-        basicConfig(format="Model: %(message)s", level=INFO)
 
     @abstractmethod
     def fit(self, x_train: ndarray, y_train: ndarray, *args, **kwargs) -> None:

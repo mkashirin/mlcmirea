@@ -21,5 +21,5 @@
 * Neural Nets (4 тетради)
   - Elementary classification ✅
   - KNN and weighing neighbors ✅
-  - Regression
-  - Layered regression
+  - Regression ✅
+  - Layered regression (WIP)
